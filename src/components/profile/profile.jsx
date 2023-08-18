@@ -101,17 +101,17 @@ function Profile() {
               <nav>
                 <ul>
                   <li>
-                    <a href="#" onClick={onClickPhotos}>
+                    <a onClick={onClickPhotos}>
                       photos
                     </a>
                   </li>
                   <li>
-                    <a href="#" onClick={onClickAbout}>
+                    <a onClick={onClickAbout}>
                       about
                     </a>
                   </li>
                   <li>
-                    <a href="#" onClick={onClickLocation}>
+                    <a onClick={onClickLocation}>
                       Location
                     </a>
                   </li>
