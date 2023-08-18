@@ -4,7 +4,7 @@ import "./profile.css";
 import axios from "axios";
 
 function Profile() {
-  const {} = useLoadScript({
+  const {isLoaded} = useLoadScript({
     googleMapsApiKey: "AIzaSyBv9EGvHDA-Ir2xbkDVUQhDc5zALNe5TL8",
   });
   const [user, setUser] = useState(null);
@@ -178,7 +178,7 @@ function Profile() {
                 </div>
               ) : null}
 
-              {state === "location" ? (
+              {state === "location" && isLoaded ? (
                 <div>
                   <GoogleMap
                     zoom={10}
