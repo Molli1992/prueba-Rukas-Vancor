@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import "./profile.css";
 import axios from "axios";
