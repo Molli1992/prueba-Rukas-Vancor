@@ -178,6 +178,11 @@ a{
     width: 800px;
 }
 
+.marker-container{
+    width: 30px;
+    height: 30px;
+}
+
 
 @media(min-width: 868px) {
     .cols-container{

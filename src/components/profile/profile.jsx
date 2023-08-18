@@ -4,11 +4,11 @@ import "./profile.css";
 import axios from "axios";
 
 function Profile() {
-  const [user, setUser] = useState(null);
-  const [state, setState] = useState("photos");
-  const { isLoaded } = useLoadScript({
+  const {} = useLoadScript({
     googleMapsApiKey: "AIzaSyBv9EGvHDA-Ir2xbkDVUQhDc5zALNe5TL8",
   });
+  const [user, setUser] = useState(null);
+  const [state, setState] = useState("photos");
 
   if (user === null) {
     axios
@@ -175,16 +175,14 @@ function Profile() {
                 </div>
               ) : null}
 
-              {state === "location" && isLoaded? (
+              {state === "location" ? (
                 <div>
                   <GoogleMap
                     zoom={10}
                     center={{ lat: 44, lng: -80 }}
                     mapContainerClassName="map-container"
                   >
-                    <Marker
-                     position={{ lat: 44, lng: -80 }}
-                     />
+                    <Marker position={{ lat: 44, lng: -80 }}></Marker>
                   </GoogleMap>
                 </div>
               ) : null}
