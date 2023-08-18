@@ -132,9 +132,12 @@ a{
     flex-direction: column;
 }
 
-.right-col nav ul li a{
+.right-col nav ul li button{
     text-transform: uppercase;
     color: #818181;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .right-col nav button{
