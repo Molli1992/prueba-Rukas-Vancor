@@ -177,13 +177,8 @@ a{
 }
 
 .map-container{
-    height: 500px;
-    width: 800px;
-}
-
-.marker-container{
-    width: 30px;
-    height: 30px;
+    height: 300px;
+    width: 100%;
 }
 
 
@@ -223,6 +218,11 @@ a{
     .settings-parrafo{
         position: relative;
         left: 0%;
+    }
+
+    .map-container{
+        height: 500px;
+        width: 100%;
     }
 }
 
