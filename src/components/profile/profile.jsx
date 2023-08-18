@@ -196,8 +196,8 @@ function Profile() {
     );
   } else {
     return (
-      <div>
-        <div>Loading...</div>
+      <div className="body-loading">
+        <div className="container-loading"><h1>Loading...</h1></div>
       </div>
     );
   }
