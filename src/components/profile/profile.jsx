@@ -35,11 +35,14 @@ function Profile() {
     setState("location");
   };
 
-  const mapa = () => {};
-
   if (user !== null) {
     console.log(user[0].location.coordinates.latitude);
     console.log(user[0].location.coordinates.longitude);
+
+    const center = {
+      lat: Number(user[0].location.coordinates.latitude),
+      lng: Number(user[0].location.coordinates.longitude),
+    };
 
     return (
       <div className="body">
@@ -179,10 +182,10 @@ function Profile() {
                 <div>
                   <GoogleMap
                     zoom={10}
-                    center={{ lat: 44, lng: -80 }}
+                    center={center}
                     mapContainerClassName="map-container"
                   >
-                    <Marker position={{ lat: 44, lng: -80 }}></Marker>
+                    <Marker position={center}></Marker>
                   </GoogleMap>
                 </div>
               ) : null}
