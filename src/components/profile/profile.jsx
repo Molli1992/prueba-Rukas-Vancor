@@ -4,9 +4,10 @@ import "./profile.css";
 
 function Profile() {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBv9EGvHDA-Ir2xbkDVUQhDc5zALNe5TL8",
+    googleMapsApiKey: process.env.REACT_APP_GooleApiKey,
   });
   const [state, setState] = useState("photos");
+  const [follow, setFollow] = useState(false);
 
   const onClickAbout = () => {
     setState("about");
@@ -21,8 +22,12 @@ function Profile() {
   };
 
   const center = {
-    lat: Number(-34.605425),
-    lng: Number(-58.381555),
+    lat: -34.593451,
+    lng: -58.376474,
+  };
+
+  const onClickOpenUrl = (url) => {
+    window.open(url, "_blank");
   };
 
   return (
@@ -44,7 +49,7 @@ function Profile() {
 
             <ul className="about">
               <li>
-                <span>4,073</span>Followers
+                <span>{!follow ? "4,073" : "4,074"}</span>Followers
               </li>
               <li>
                 <span>322</span>Following
@@ -63,17 +68,45 @@ function Profile() {
               </p>
 
               <ul>
-                <li>
-                  <i className="fab fa-twitter"></i>
+                <li
+                  onClick={() => {
+                    onClickOpenUrl("https://x.com/");
+                  }}
+                >
+                  <i
+                    className="fab fa-twitter"
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </li>
-                <li>
-                  <i className="fab fa-pinterest"></i>
+                <li
+                  onClick={() => {
+                    onClickOpenUrl("https://pinterest.com");
+                  }}
+                >
+                  <i
+                    className="fab fa-pinterest"
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </li>
-                <li>
-                  <i className="fab fa-facebook"></i>
+                <li
+                  onClick={() => {
+                    onClickOpenUrl("https://www.facebook.com/");
+                  }}
+                >
+                  <i
+                    className="fab fa-facebook"
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </li>
-                <li>
-                  <i className="fab fa-dribbble"></i>
+                <li
+                  onClick={() => {
+                    onClickOpenUrl("https://dribbble.com/");
+                  }}
+                >
+                  <i
+                    className="fab fa-dribbble"
+                    style={{ cursor: "pointer" }}
+                  ></i>
                 </li>
               </ul>
             </div>
@@ -92,7 +125,11 @@ function Profile() {
                   <button onClick={onClickLocation}>Location</button>
                 </li>
               </ul>
-              <button>Follow</button>
+              {!follow ? (
+                <button onClick={() => setFollow(true)}>Follow</button>
+              ) : (
+                <button onClick={() => setFollow(false)}>Following</button>
+              )}
             </nav>
 
             {state === "photos" ? (
